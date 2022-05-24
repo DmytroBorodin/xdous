@@ -5,9 +5,9 @@
 @import "./story_page.scss";
 @import "./roadmap.scss";
 @import "./crew.scss";
-@import './sneakpeeks.scss';
-@import './faq.scss';
-@import "./icons_font.css";
+@import "./sneakpeeks.scss";
+@import "./faq.scss";
+@import url("./icons_font.css");
 /* main styles */
 
 html {
@@ -36,12 +36,14 @@ body {
     }
   }
 }
+
 body,
 .body__wrapper {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .body__wrapper {
   position: absolute;
   top: 0;
@@ -49,7 +51,20 @@ body,
   width: 100%;
   height: 100%;
   padding-top: 4.6rem;
-  background: url("../imgs/rain_bg.png");
+}
+
+body#home {
+  .body__wrapper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../imgs/rain_bg.gif");
+    opacity: 0.2;
+    z-index: -1;
+  }
 }
 
 .main__container {

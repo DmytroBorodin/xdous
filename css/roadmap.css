@@ -721,12 +721,24 @@
   main.roadmap {
     overflow-y: scroll;
   }
+  .main__wrapper.roadmap .page__title {
+    font-size: 3.8rem;
+  }
+  .main__grid {
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 768px) and (max-height: 475px) {
   main.roadmap {
     overflow-y: scroll;
     max-height: calc(100vh - 4.7rem);
+  }
+  .main__wrapper.roadmap .page__title {
+    font-size: 3.8rem;
+  }
+  .main__grid {
+    height: auto;
   }
   .roadmap__frame__wrapper#add_on_mind_frame img {
     display: none;

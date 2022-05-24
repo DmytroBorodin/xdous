@@ -1,0 +1,267 @@
+@import "./variables.scss";
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.main__wrapper.header__wrapper {
+  padding-top: 1.2rem;
+}
+
+.main__container.main__menu {
+  width: calc(100% - 10.3rem);
+}
+
+.main__menu__wrapper,
+.main__menu__wrapper > .main__menu__container {
+  width: 100%;
+}
+
+.project__logo {
+  margin-right: 1.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.3rem;
+  font-size: 2rem;
+  color: $main_dark;
+  background: $link_bg;
+}
+
+.menu__links__list.main__container {
+  align-items: baseline;
+}
+
+.menu__list__item {
+  position: relative;
+  margin-top: 1rem;
+  padding: 0 0.5rem;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0.3rem;
+    right: 0;
+    width: 0.1rem;
+    height: 0.8rem;
+    background: $main_light;
+  }
+  &:last-child:after {
+    display: none;
+  }
+}
+
+.menu__link {
+  position: relative;
+  padding: 0 1.5rem 0.3rem;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  font-family: $menu_font, sans-serif;
+  color: $main_light;
+  transition: all 0.3s ease;
+  &:after {
+    content: "";
+    border-top: 0.2rem solid $transparent;
+    transition: all 0.3s ease;
+  }
+  &:hover,
+  &.active {
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -0.3rem;
+      left: 0;
+      width: 100%;
+      border-top: 0.2rem solid $main_hover;
+    }
+  }
+}
+
+body.light {
+  .main__menu__wrapper {
+    background-color: $main-light;
+  }
+  .menu__list__item {
+    &:after {
+      background: $main_dark;
+    }
+  }
+  .menu__link {
+    color: $main_dark;
+  }
+}
+
+.social__list__item {
+  margin-left: 2rem;
+}
+
+.social__link {
+  position: relative;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  text-align: center;
+  vertical-align: center;
+  color: $main_dark;
+  background: $link_bg;
+  transition: all 0.3s ease;
+  &:hover {
+    background: $main_hover;
+    color: $main_light;
+  }
+  .social__link__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.close__btn,
+.burger__menu__btn {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .menu__link {
+    padding: 0 1rem 0.3rem;
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+  }
+  .project__logo {
+    padding: 0.6rem 1rem;
+    font-size: 1.8rem;
+  }
+  .social__link {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main__container.main__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    overflow: hidden;
+    height: 100vh;
+    backdrop-filter: blur(0.1rem);
+    transition: all 0.3s ease;
+    z-index: 10;
+    &.active {
+      width: 100%;
+    }
+  }
+
+  body.light {
+    .close__btn {
+      span:before {
+        color: $main_dark;
+      }
+    }
+    .burger__menu__btn {
+      color: $main_dark;
+    }
+  }
+
+  .close__btn,
+  .burger__menu__btn {
+    display: block;
+  }
+
+  .close__btn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.6rem;
+    padding-right: 2.6rem;
+    font-size: 1.7rem;
+  }
+
+  .burger__menu__btn {
+    font-size: 1.7rem;
+    color: $main_light;
+    transition: all 0.3s ease;
+    &:hover,
+    &.active {
+      color: $main_hover;
+    }
+  }
+
+  .main__menu__wrapper {
+    height: 100%;
+    width: 77.143%;
+    background: $main_dark;
+    padding-bottom: 1.5rem;
+  }
+
+  .main__menu__wrapper > .main__container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding-top: 7.5rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .menu__links__list.main__container,
+  .social__links__list.main__container {
+    width: 100%;
+    padding-left: 2.4rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .menu__links__list.main__container {
+    margin-bottom: 21.6rem;
+  }
+
+  .menu__list__item {
+    margin: 0 0 1.4rem;
+    padding: 0;
+    width: 100%;
+    &:last-child {
+      margin: 0;
+    }
+    &:after {
+      display: none;
+    }
+  }
+
+  .menu__link {
+    position: relative;
+    padding: 0 0 1.4rem;
+    width: 100%;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    &:hover {
+      &:after {
+        bottom: 0;
+        transform: translateY(50%);
+      }
+    }
+  }
+
+  .social__list__item {
+    margin: 0 0 4.3rem 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .social__link {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .main__wrapper.header__wrapper {
+    padding-top: 4rem;
+  }
+}

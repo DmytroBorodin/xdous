@@ -1,0 +1,31 @@
+* {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  box-sizing: border-box;
+}
+a,
+img,
+button,
+input {
+  display: block;
+}
+a,
+img,
+button {
+  cursor: pointer;
+}
+button {
+  background-color: transparent;
+  border: none;
+}
+a {
+  text-decoration: none;
+}
+button:focus,
+input:focus {
+  outline: none;
+}
+ul {
+  list-style-type: none;
+}

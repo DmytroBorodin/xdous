@@ -1,0 +1,700 @@
+@import "./variables";
+
+.main__wrapper.roadmap {
+  padding: 2.78% 5.55% 9.79%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .page__title {
+    margin-bottom: 2rem;
+    color: $main_dark;
+  }
+}
+
+.main__grid {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 7.3rem);
+  display: grid;
+  grid-template-columns: 2.04fr 2.04fr 1.85fr 1.85fr 2.41fr 2.41fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
+}
+
+.roadmap__ref {
+  padding: 2rem;
+  background-color: $rdmp_link_bg;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    .ref__number {
+      color: $main_hover;
+    }
+    .ref__title {
+      color: $main_dark;
+    }
+  }
+}
+
+#value {
+  grid-area: 1 / 1 / 2 / 3;
+  background-image: url("../imgs/rm_bg_1.svg");
+  background-size: 51.57%;
+  background-position: bottom 2rem right 2rem;
+  &:hover {
+    background-image: url("../imgs/rm_bg_1_over.svg");
+  }
+}
+#community {
+  grid-area: 2 / 1 / 3 / 2;
+  background-image: url("../imgs/rm_bg_2.svg");
+  background-size: 62.75%;
+  background-position: bottom 2rem right 2rem;
+  &:hover {
+    background-image: url("../imgs/rm_bg_2_over.svg");
+  }
+  .ref__title {
+    margin-bottom: 1rem;
+  }
+}
+#merch {
+  grid-area: 2 / 2 / 3 / 3;
+  background-image: url("../imgs/rm_bg_3.svg");
+  background-size: 63.7%;
+  background-position: bottom 2.2rem right 1.6rem;
+  &:hover {
+    background-image: url("../imgs/rm_bg_3_over.svg");
+  }
+}
+#metaverse {
+  grid-area: 1 / 3 / 3 / 5;
+  background-image: url("../imgs/rm_bg_4.svg");
+  background-size: 45.6%;
+  background-position: bottom 1.5rem right 2rem;
+  &:hover {
+    background-image: url("../imgs/rm_bg_4_over.svg");
+  }
+}
+#giveaways {
+  grid-area: 1 / 5 / 2 / 7;
+  background-image: url("../imgs/rm_bg_5.svg");
+  background-size: 36.93%;
+  background-position: bottom 2.3rem right 6rem;
+  &:hover {
+    background-image: url("../imgs/rm_bg_5_over.svg");
+  }
+}
+#add_on_mind {
+  grid-area: 2 / 5 / 3 / 7;
+  position: relative;
+  span.icon-caret_right_ic {
+    position: absolute;
+    bottom: 2.2rem;
+    right: 2.4rem;
+    opacity: 0;
+  }
+  &:hover {
+    background-color: $main_hover;
+    .ref__number,
+    .ref__title {
+      color: $main_light;
+    }
+    span.icon-caret_right_ic {
+      opacity: 0;
+    }
+  }
+}
+
+#value,
+#add_on_mind,
+#giveaways {
+  .ref__title__block.main__container {
+    height: 100%;
+  }
+}
+
+#merch,
+#metaverse {
+  .ref__title {
+    margin-top: 1rem;
+  }
+}
+
+.ref__title__block.main__container {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ref__title {
+  font-family: $text_font;
+  font-size: 1.7rem;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: $ref_title;
+  transition: all 0.3s ease;
+}
+
+.ref__number {
+  font-family: $title_font;
+  font-size: 4.8rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 1px 1px 19px rgba(56, 56, 56, 0.05);
+  transition: all 0.3s ease;
+}
+
+// roadmap frames styles
+
+.roadmap__frame__container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  &.open {
+    height: 100%;
+  }
+}
+
+.roadmap__frame__wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  background-color: $rdmp_frame_bg;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &#value_frame,
+  &#metaverse_frame,
+  &#add_on_mind_frame {
+    .roadmap__frame__header {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &#value_frame {
+    background-image: url("../imgs/rm_bg_1.svg");
+    background-size: 37.1%;
+    background-position: right -3.5rem bottom -4.1rem;
+    background-repeat: no-repeat;
+  }
+
+  &#community_frame {
+    background-image: url("../imgs/rm_bg_2.svg");
+    background-size: 29.3%;
+    background-position: right -1.9rem bottom -1.1rem;
+    background-repeat: no-repeat;
+  }
+
+  &#merch_frame {
+    background-image: url("../imgs/rm_bg_3.svg");
+    background-size: 29.3%;
+    background-position: right -3.3rem bottom -2.7rem;
+    background-repeat: no-repeat;
+  }
+
+  &#metaverse_frame {
+    background-image: url("../imgs/rm_bg_4.svg");
+    background-size: 12.8%;
+    background-position: right 7.6rem bottom -3rem;
+    background-repeat: no-repeat;
+  }
+
+  &#giveaways_frame {
+    background-image: url("../imgs/rm_bg_5.svg");
+    background-size: 30.1%;
+    background-position: right -3.1rem bottom 0rem;
+    background-repeat: no-repeat;
+  }
+
+  &#add_on_mind_frame {
+    img {
+      position: absolute;
+    }
+    img:first-of-type {
+      bottom: 0;
+      left: 0;
+      width: 21.33%;
+    }
+    img:nth-of-type(2) {
+      bottom: 5rem;
+      left: 23.44%;
+      width: 11%;
+    }
+    img:nth-of-type(3) {
+      top: 50%;
+      left: 40.1%;
+      width: 9.92%;
+    }
+    img:nth-of-type(4) {
+      margin-top: 3.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 3rem;
+      width: 30.31%;
+    }
+    .roadmap__frame__header,
+    .roadmap__frame__button,
+    .roadmap__frame__subtext {
+      position: relative;
+      z-index: 2;
+    }
+    .roadmap__frame__subtext {
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+.roadmap__frame__header {
+  margin-bottom: 4.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.roadmap__frame__title {
+  font-family: $title_font;
+  font-size: 3.6rem;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: $frame_title;
+}
+
+.frame__close__btn {
+  font-size: 3.2rem;
+}
+
+.roadmap__frame__subtext,
+.roadmap__frame__subtitle,
+.roadmap__frame__text,
+.roadmap__frame__title {
+  width: 100%;
+  max-width: 81rem;
+}
+
+.roadmap__frame__subtext,
+.roadmap__frame__subtitle,
+.roadmap__frame__text {
+  letter-spacing: -0.03em;
+  color: $frame_text;
+  line-height: 1.1;
+}
+
+.roadmap__frame__subtext {
+  margin: 1.5rem 0 4rem;
+  font-size: 1.7rem;
+  line-height: 1.2;
+  font-weight: 400;
+  font-family: $subtext_font;
+}
+
+.roadmap__frame__subtext,
+.roadmap__text {
+  width: 100%;
+  max-width: 81rem;
+}
+
+.roadmap__frame__subtitle {
+  margin-bottom: 1.5rem;
+  font-family: $title_font;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.roadmap__frame__textitle {
+  color: $main_hover;
+}
+
+.roadmap__frame__text {
+  margin-bottom: 3.7rem;
+  font-size: 1.9rem;
+  font-family: $text_font;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.roadmap__frame__button.main__container {
+  align-items: stretch;
+  border-radius: 0.5rem;
+  border: 0.1rem solid $main_hover;
+  background-color: $main_light;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  span.icon-sc_link_3_ic {
+    font-size: 2.4rem;
+    padding: 1.5rem 1.6rem;
+    border-right: 0.1rem solid $main_hover;
+    &:before {
+      color: $main_hover;
+      transition: all 0.3s ease;
+    }
+  }
+  .roadmap__frame__btn__text {
+    padding: 0 1.6rem;
+    font-size: 1.8rem;
+    line-height: 5.6rem;
+    font-family: $title_font;
+    font-weight: 800;
+    color: $main_hover;
+  }
+  span {
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    background-color: $main_hover;
+    span.icon-sc_link_3_ic {
+      border-right: 0.1rem solid $main_light;
+      &:before {
+        color: $main_light;
+      }
+    }
+    .roadmap__frame__btn__text {
+      color: $main_light;
+    }
+  }
+}
+
+@media screen and (max-height: 760px) {
+  #value {
+    background-size: 45.57%;
+  }
+
+  #community {
+    background-size: 57.75%;
+  }
+
+  #merch {
+    background-size: 58.7%;
+  }
+
+  #metaverse {
+    background-size: 40.6%;
+  }
+
+  #giveaways {
+    background-size: 31.93%;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .roadmap__frame__wrapper {
+    &#metaverse_frame {
+      background-size: 16.8%;
+    }
+  }
+}
+
+@media screen and (max-width: 1368px) {
+  .roadmap__frame__wrapper {
+    padding: 2.2rem;
+    &#metaverse_frame {
+      background-size: 12.8%;
+    }
+  }
+
+  #community {
+    background-size: 47.75%;
+    background-position: bottom 1rem right 1rem;
+  }
+
+  #merch {
+    background-size: 48.7%;
+    background-position: bottom 1.2rem right 0.8rem;
+  }
+
+  #giveaways {
+    background-size: 31.93%;
+    background-position: bottom 1.3rem right 4.5rem;
+  }
+
+  .frame__close__btn {
+    font-size: 1.7rem;
+  }
+
+  .roadmap__frame__title {
+    font-size: 3.2rem;
+  }
+
+  .roadmap__frame__text {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .ref__title {
+    font-size: 1.5rem;
+  }
+
+  .ref__number {
+    font-size: 3.6rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .main__wrapper.roadmap {
+    padding: 2.78% 2rem 9.79%;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-height: 768px) and (min-height: 1024px) {
+  .main__wrapper.roadmap {
+    padding: 20% 2rem 25%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  main.roadmap {
+    overflow-y: scroll;
+    max-height: calc(100vh - 9.2rem);
+  }
+  .main__wrapper.roadmap {
+    padding: 0% 2rem 2rem;
+    height: 100%;
+  }
+
+  .main__wrapper.roadmap {
+    .page__title {
+      position: absolute;
+      top: 7.3rem;
+    }
+  }
+
+  .main__grid {
+    position: absolute;
+    height: auto;
+    padding-bottom: 2rem;
+    top: 14.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 4rem);
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .roadmap__ref {
+    min-height: 20rem;
+    position: relative;
+    padding: 123.46% 0 0 0;
+  }
+
+  .ref__title__block {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  #value {
+    grid-area: 1 / 1 / 2 / 2;
+    background-size: 96.3%;
+    background-position: bottom -0.8rem right -3.4rem;
+  }
+  #community {
+    grid-area: 1 / 2 /1 / 3;
+    background-size: 77.78%;
+    background-position: bottom -0.4rem right -1.5rem;
+    .ref__title {
+      margin-bottom: 1rem;
+    }
+  }
+  #merch {
+    grid-area: 2 / 1 / 2 / 2;
+    background-size: 75.93%;
+    background-position: bottom -0.5rem right -0.5rem;
+  }
+  #metaverse {
+    grid-area: 2 / 2 / 4 / 3;
+    background-size: 90.12%;
+    background-position: bottom -1.4rem right -1.1rem;
+  }
+  #giveaways {
+    grid-area: 3 / 1 / 4 / 2;
+    background-size: 83.33%;
+    background-position: bottom -2.4rem right -2rem;
+  }
+  #add_on_mind {
+    grid-area: 4 / 1 / 5 / 3;
+    .ref__title__block {
+      top: 2rem;
+      left: 2rem;
+    }
+    &:hover {
+      background-color: $main_hover;
+      .ref__number,
+      .ref__title {
+        color: $main_light;
+      }
+    }
+  }
+
+  #value,
+  #add_on_mind,
+  #giveaways {
+    .ref__title__block.main__container {
+      height: auto;
+    }
+  }
+
+  #value,
+  #community,
+  #giveaways {
+    .ref__title {
+      order: 2;
+      margin-top: 0.5rem;
+    }
+  }
+
+  #merch,
+  #metaverse {
+    .ref__title {
+      margin-top: 0.5rem;
+    }
+  }
+
+  #add_on_mind {
+    padding: 2rem;
+    position: relative;
+    span.icon-caret_right_ic:before {
+      font-size: 1.5rem;
+      color: #fff;
+    }
+    &:hover {
+      span.icon-caret_right_ic {
+        opacity: 1;
+      }
+    }
+    .ref__title {
+      margin-bottom: 1rem;
+    }
+  }
+
+  // roadmap frame styles
+  .main__grid.frame__opened {
+    .roadmap__ref {
+      display: none;
+    }
+  }
+  .roadmap__frame__container {
+    padding-bottom: 1rem;
+    width: calc(100% + 2rem);
+    &.open {
+      height: auto;
+      min-height: calc(100vh - 12.2rem);
+    }
+  }
+
+  .roadmap__frame__wrapper {
+    padding: 2rem 1.2rem 0 2rem;
+    height: auto;
+    min-height: calc(100vh - 12.2rem);
+    &#value_frame,
+    &#metaverse_frame,
+    &#add_on_mind_frame {
+      .roadmap__frame__header {
+        margin-bottom: 1.2rem;
+      }
+    }
+
+    &#value_frame {
+      background-size: 100%;
+      background-position: right 0 bottom 1.4rem;
+      padding-bottom: 82.3%;
+    }
+
+    &#community_frame {
+      background-size: 68.55%;
+      background-position: right 46.67% bottom -0.5rem;
+      padding-bottom: 67.7%;
+    }
+
+    &#merch_frame {
+      background-size: 78.75%;
+      background-position: right 48.58% bottom -1.1rem;
+      padding-bottom: 62.35%;
+    }
+
+    &#metaverse_frame {
+      background-image: none;
+      padding-bottom: 1.8rem;
+    }
+
+    &#giveaways_frame {
+      background-size: 53.82%;
+      background-position: right 49.86% bottom -3rem;
+      padding-bottom: 60.62%;
+    }
+    &#add_on_mind_frame {
+      img {
+        position: absolute;
+      }
+      img:first-of-type {
+        bottom: 0;
+        left: 10.2%;
+        width: 77.34%;
+      }
+      img:nth-of-type(2) {
+        bottom: 20.26%;
+        left: 22.1%;
+        width: 19%;
+      }
+      img:nth-of-type(3) {
+        top: 56.1%;
+        left: calc(100% - 0.9rem);
+        transform: translateX(-100%);
+        width: 33.1%;
+      }
+      img:nth-of-type(4) {
+        display: none;
+      }
+    }
+  }
+  .roadmap__frame__header.main__container {
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .body__wrapper.roadmap {
+    padding-top: 9.2rem;
+  }
+
+  .main__wrapper.roadmap {
+    .page__title {
+      display: none;
+    }
+  }
+
+  .main__grid {
+    top: 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-height: 575px) {
+  main.roadmap {
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 768px) and (max-height: 475px) {
+  main.roadmap {
+    overflow-y: scroll;
+    max-height: calc(100vh - 4.7rem);
+  }
+
+  .roadmap__frame__wrapper {
+    &#add_on_mind_frame {
+      img {
+        display: none;
+      }
+    }
+  }
+}

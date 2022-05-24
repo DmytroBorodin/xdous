@@ -71,11 +71,14 @@ const createFrame = (frameData) => {
   }
 
   if (frameData.imgs) {
+    let baseUrl = window.location.href.split("/");
+    baseUrl.pop();
+    baseUrl = baseUrl.join("/");
     frameData.imgs.forEach((item) => {
       const img = createElement("img", null, [
         {
           attrName: "src",
-          attrVal: item,
+          attrVal: baseUrl + item,
         },
       ]);
       frameWrapper.append(img);

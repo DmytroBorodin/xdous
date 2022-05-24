@@ -1,43 +1,33 @@
 const slideWrapper = document.querySelector(".img__slider__wrapper");
 const sliderBlock = document.querySelector(".img__slider__block");
 const slides = [...document.querySelectorAll("img")];
-const sliderWidth = slides[0].clientWidth;
 let scrollAmount = 0;
-const scrollMin = 0;
-const scrollMax = sliderWidth * slides.length + 5 * (slides.length - 1) + "px";
+let scrollMax, sliderWidth;
 
-slideWrapper.style.width = scrollMax;
+function calculateSliderWidth() {
+  sliderWidth = slides[0].clientWidth;
+  scrollMax = sliderWidth * slides.length + 5 * (slides.length - 1) + "px";
 
-const viewportWidth = document.body.clientWidth;
-const viewportHeight = document.body.clientHeight;
-if (viewportWidth < 768) {
-  slideWrapper.style.width = parseInt(scrollMax) / 2 + "px";
-  if (slides.length % 2 !== 0) {
-    console.log(parseInt(scrollMax) / 2 + sliderWidth / 2);
-    slideWrapper.style.width = parseInt(scrollMax) / 2 + sliderWidth / 2 + "px";
-  }
-}
-
-if (viewportHeight < 425) {
   slideWrapper.style.width = scrollMax;
-}
 
-window.addEventListener("resize", (e) => {
-  const docWidth = document.body.clientWidth;
-  console.log(docWidth);
-  if (docWidth < 768) {
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
+  if (viewportWidth < 768) {
     slideWrapper.style.width = parseInt(scrollMax) / 2 + "px";
     if (slides.length % 2 !== 0) {
-      slideWrapper.style.width = parseInt(scrollMax) / 2 + sliderWidth + "px";
+      console.log(parseInt(scrollMax) / 2 + sliderWidth / 2);
+      slideWrapper.style.width = parseInt(scrollMax) / 2 + sliderWidth / 2 + "px";
     }
-  } else {
-    slideWrapper.style.width = scrollMax;
   }
 
   if (viewportHeight < 425) {
     slideWrapper.style.width = scrollMax;
   }
-});
+}
+
+calculateSliderWidth();
+
+window.addEventListener("resize", calculateSliderWidth);
 
 const scrollButton = document.querySelector(".btn__container button");
 

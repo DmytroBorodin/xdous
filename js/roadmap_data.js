@@ -111,10 +111,10 @@ const roadmapFrameData = [
     frameParagraphs: [],
     btnText: "Join our discord",
     imgs: [
-      "../imgs/rm_lst_bg_1.png",
-      "../imgs/rm_lst_bg_2.png",
-      "../imgs/rm_lst_bg_3.png",
-      "../imgs/rm_lst_bg_4.png",
+      "/imgs/rm_lst_bg_1.png",
+      "/imgs/rm_lst_bg_2.png",
+      "/imgs/rm_lst_bg_3.png",
+      "/imgs/rm_lst_bg_4.png",
     ],
   },
 ];

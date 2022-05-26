@@ -250,7 +250,7 @@
   }
 }
 
-@media screen and (max-height: 767px) {
+@media screen and (max-height: 767px) and (max-width: 992px) {
   .main__img__block {
     display: none;
   }
